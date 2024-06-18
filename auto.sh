@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if ! [[ $(whoami) == 'root' ]]; then
+  echo "Run as sudo and try again"
+  exit
+fi
+
 default_sftp_exec() {
   echo $(cat /etc/ssh/sshd_config | grep -w Subsystem | grep -w sftp | awk '{print $3}')
 }
