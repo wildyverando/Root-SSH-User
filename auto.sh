@@ -37,3 +37,5 @@ Password: $rand_pwd
 Port: 22
 ======================================
 "
+sleep 10
+reboot
